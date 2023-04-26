@@ -1,4 +1,11 @@
 name: Shell
+author: Daniel Millar
+website: https://github.com/danielmillar
 version: '${project.version}'
 main: me.danielmillar.shell.Shell
 api-version: 1.19
+
+commands:
+  shell:
+    description: Shell command
+    aliases: [sh]
