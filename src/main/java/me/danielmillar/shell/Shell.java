@@ -6,9 +6,11 @@ import me.danielmillar.shell.commands.ShellCommand;
 import me.danielmillar.shell.commands.ShellReloadCommand;
 import me.danielmillar.shell.listeners.BookEditListener;
 import me.danielmillar.shell.listeners.TabCompleteListener;
+import me.danielmillar.shell.managers.ConfigManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@Getter
 public final class Shell extends JavaPlugin {
     
     @Getter
@@ -17,12 +19,14 @@ public final class Shell extends JavaPlugin {
     public Shell(){
         inst = this;
     }
+    
+    private ConfigManager configManager;
 
     @Override
     public void onEnable() {
         
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        configManager = new ConfigManager(this, "config");
+        configManager.createConfig();
         
         Bukkit.getPluginManager().registerEvents(new TabCompleteListener(), this);
         Bukkit.getPluginManager().registerEvents(new BookEditListener(this), this);

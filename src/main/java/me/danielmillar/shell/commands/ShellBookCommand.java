@@ -38,8 +38,8 @@ public class ShellBookCommand implements CommandExecutor {
 		
 		ItemStack item = new ItemStack(Material.WRITABLE_BOOK);
 		item.editMeta(meta -> {
-			meta.displayName(Utils.colorize(plugin.getConfig().getString("shellBook.name")).decoration(TextDecoration.ITALIC, TextDecoration.State.FALSE));
-			List<Component> lore = Utils.colorize(plugin.getConfig().getStringList("shellBook.lore"));
+			meta.displayName(Utils.colorize(plugin.getConfigManager().getConfig().getString("shellBook.name")).decoration(TextDecoration.ITALIC, TextDecoration.State.FALSE));
+			List<Component> lore = Utils.colorize(plugin.getConfigManager().getConfig().getStringList("shellBook.lore"));
 			for (int i = 0; i < lore.size(); i++) {
 				lore.set(i, lore.get(i).decoration(TextDecoration.ITALIC, TextDecoration.State.FALSE));
 			}

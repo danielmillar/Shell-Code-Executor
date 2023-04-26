@@ -22,7 +22,7 @@ public class ShellReloadCommand implements CommandExecutor {
 			return true;
 		}
 		
-		plugin.reloadConfig();
+		plugin.getConfigManager().reloadConfig();
 		commandSender.sendMessage(Utils.colorize("<green>Config reloaded!"));
 		return true;
 	}
