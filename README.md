@@ -1,6 +1,7 @@
 # Shell Code Executor
 
 ![Tested Versions](https://img.shields.io/badge/Tested%20on-1.19.x-brightgreen?style=for-the-badge)
+![GitHub all releases](https://img.shields.io/github/downloads/danielmillar/Shell-Code-Executor/total?color=bright_green&style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/danielmillar/Shell-Code-Executor?color=bright_green&style=for-the-badge)
 
 
