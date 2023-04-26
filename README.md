@@ -1,7 +1,7 @@
 # Shell Code Executor
 
-![Tested Versions](https://img.shields.io/badge/Tested%20on-1.19.x-brightgreen)
-![GitHub](https://img.shields.io/github/license/danielmillar/Shell-Code-Executor)
+![Tested Versions](https://img.shields.io/badge/Tested%20on-1.19.x-brightgreen?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/danielmillar/Shell-Code-Executor?style=for-the-badge)
 
 
 Shell Code Executor is a powerful and versatile Spigot plugin that allows server administrators to execute shell commands directly from within the game. Designed with flexibility in mind, the plugin provides an easy-to-use interface for running system-level tasks without leaving the Minecraft environment.
