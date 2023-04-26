@@ -1,7 +1,7 @@
 package me.danielmillar.shell.listeners;
 
 import me.danielmillar.shell.Shell;
-import me.danielmillar.shell.Utils;
+import me.danielmillar.shell.utils.Utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.NamespacedKey;

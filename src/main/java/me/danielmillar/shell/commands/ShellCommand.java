@@ -1,6 +1,8 @@
 package me.danielmillar.shell.commands;
 
-import me.danielmillar.shell.Utils;
+import me.danielmillar.shell.Shell;
+import me.danielmillar.shell.utils.ConfigKeys;
+import me.danielmillar.shell.utils.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,15 +12,21 @@ import java.util.Arrays;
 
 public class ShellCommand implements CommandExecutor {
 	
+	private Shell plugin;
+	
+	public ShellCommand(Shell plugin) {
+		this.plugin = plugin;
+	}
+	
 	@Override
 	public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
 		if (!commandSender.hasPermission("shell.execute")) {
-			commandSender.sendMessage(Utils.colorize("<red>You do not have permission to execute this command."));
+			commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.NO_PERMISSION)));
 			return true;
 		}
 		
 		if(strings.length == 0){
-			commandSender.sendMessage(Utils.colorize("<gray>Please provide a shell command."));
+			commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_INCORRECT_USAGE).replace("%usage%", "/shell [-c | -u] <command>")));
 			return true;
 		}
 		
@@ -31,7 +39,7 @@ public class ShellCommand implements CommandExecutor {
 		}
 		
 		if (strings.length == 0) {
-			commandSender.sendMessage(Utils.colorize("<gray>Please provide a shell command."));
+			commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_INCORRECT_USAGE).replace("%usage%", "/shell [-c | -u] <command>")));
 			return false;
 		}
 		

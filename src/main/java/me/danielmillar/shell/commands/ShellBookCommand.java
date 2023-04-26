@@ -1,7 +1,8 @@
 package me.danielmillar.shell.commands;
 
 import me.danielmillar.shell.Shell;
-import me.danielmillar.shell.Utils;
+import me.danielmillar.shell.utils.ConfigKeys;
+import me.danielmillar.shell.utils.Utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
@@ -27,12 +28,12 @@ public class ShellBookCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
 		if (!commandSender.hasPermission("shell.execute")) {
-			commandSender.sendMessage(Utils.colorize("<red>You do not have permission to execute this command."));
+			commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.NO_PERMISSION)));
 			return true;
 		}
 		
 		if(!(commandSender instanceof Player)){
-			commandSender.sendMessage(Utils.colorize("<red>This command can only be executed by a player."));
+			commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.ONLY_PLAYERS)));
 			return true;
 		}
 		
@@ -51,7 +52,7 @@ public class ShellBookCommand implements CommandExecutor {
 		
 		Player player = (Player) commandSender;
 		player.getInventory().addItem(item);
-		player.sendMessage(Utils.colorize("<green>Shell Book <gray>added to your inventory."));
+		player.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_BOOK_GIVEN)));
 		return true;
 	}
 	

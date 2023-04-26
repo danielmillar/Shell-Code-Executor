@@ -40,7 +40,7 @@ Shell Code Executor is a powerful and versatile Spigot plugin that allows server
 
 ### TODO
 
-- [ ] Make messages configurable
+- [x] Make messages configurable
 - [ ] Allow books to have their own process
 
 ### Disclaimer

@@ -4,3 +4,18 @@ shellBook:
     - ''
     - '<gray>Edit the book and click "Done" to run the command.'
     - ''
+
+prefix: '<green><bold>ѕʜᴇʟʟ</bold> <dark_gray>| '
+
+messages:
+  noPermissions: '<prefix><red>You do not have permission to use this command.'
+  onlyPlayers: '<prefix><red>This command can only be used by players.'
+  shell:
+    incorrectUsage: '<prefix><gray>Incorrect usage. Use <white>%usage% <gray>instead.'
+    exitWithCode: '<prefix><gray>Command exited with code: <white>%code%'
+    sentConsoleOutput: '<prefix><gray>Command executed and sent output to console. Please check console for output.'
+    failed: '<prefix><red>Command failed to execute. Please check console for errors.'
+  shellBook:
+    given: '<prefix><gray>You have been given a shell book.'
+  shellReload:
+    success: '<prefix><gray>Successfully reloaded the plugin config(s)'

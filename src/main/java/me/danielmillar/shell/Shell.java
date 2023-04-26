@@ -30,7 +30,7 @@ public final class Shell extends JavaPlugin {
         
         Bukkit.getPluginManager().registerEvents(new TabCompleteListener(), this);
         Bukkit.getPluginManager().registerEvents(new BookEditListener(this), this);
-        getCommand("shell").setExecutor(new ShellCommand());
+        getCommand("shell").setExecutor(new ShellCommand(this));
         getCommand("shellbook").setExecutor(new ShellBookCommand(this));
         getCommand("shellreload").setExecutor(new ShellReloadCommand(this));
     }
