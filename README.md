@@ -38,6 +38,10 @@ Shell Code Executor is a powerful and versatile Spigot plugin that allows server
 | `shell.execute` | Allows a user to execute shell commands using the plugin. |
 | `shell.reload`  | Allows a user to reload the plugins config.               |
 
+### TODO
+
+- [ ] Make messages configurable
+- [ ] Allow books to have their own process
 
 ### Disclaimer
 
