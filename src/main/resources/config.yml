@@ -1,0 +1,6 @@
+shellBook:
+  name: '<green>Shell Book'
+  lore:
+    - ''
+    - '<gray>Edit the book and click "Done" to run the command.'
+    - ''

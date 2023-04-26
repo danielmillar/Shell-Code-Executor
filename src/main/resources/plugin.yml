@@ -9,3 +9,9 @@ commands:
   shell:
     description: Shell command
     aliases: [sh]
+  shellbook:
+    description: Shellbook command
+    aliases: [shb]
+  shellreload:
+    description: Shellreload command
+    aliases: [shr]
