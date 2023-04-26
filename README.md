@@ -13,10 +13,18 @@ Shell Code Executor is a powerful and versatile Spigot plugin that allows server
 * Permission-based access control ensures that only authorized users can execute shell commands.
 * Supports various platforms, including Linux, and Windows servers.
 
+### Command Arguments
+
+| Arguments | Description                                               |
+|-----------|-----------------------------------------------------------|
+| default   | By default it'll output using `-u` so in-game chat (User) |
+| `-u`      | Output the command output to in-game chat (User)          |
+| `-c`      | Output the command output to server console chat (User)   |
+
 ### Permissions
 
 | Permission      | Description                                               |
-| ----------------|-----------------------------------------------------------|
+|-----------------|-----------------------------------------------------------|
 | `shell.execute` | Allows a user to execute shell commands using the plugin. |
 
 
