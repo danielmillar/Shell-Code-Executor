@@ -38,22 +38,23 @@ public class Utils {
 			processBuilder.command(args);
 			Process process = processBuilder.start();
 			
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-			String line;
-			while ((line = reader.readLine()) != null) {
-				if(outputToConsole) {
-					Bukkit.getConsoleSender().sendMessage(Utils.colorize(line));
-				}else {
-					commandSender.sendMessage(Utils.colorize(line));
+			try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+				String line;
+				while ((line = reader.readLine()) != null) {
+					if (outputToConsole) {
+						Bukkit.getConsoleSender().sendMessage(Utils.colorize(line));
+					} else {
+						commandSender.sendMessage(Utils.colorize(line));
+					}
 				}
 			}
 			
 			int exitCode = process.waitFor();
 			if (exitCode != 0) {
 				if(outputToConsole) {
-					Bukkit.getConsoleSender().sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_EXIT_WITH_CODE.replace("%code%", String.valueOf(exitCode)))));
+					Bukkit.getConsoleSender().sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_EXIT_WITH_CODE).replace("%code%", String.valueOf(exitCode))));
 				}else {
-					commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_EXIT_WITH_CODE.replace("%code%", String.valueOf(exitCode)))));
+					commandSender.sendMessage(Utils.colorize(plugin.getConfigManager().getConfig().getString(ConfigKeys.SHELL_EXIT_WITH_CODE).replace("%code%", String.valueOf(exitCode))));
 				}
 			}
 			
