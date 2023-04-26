@@ -12,6 +12,7 @@ Shell Code Executor is a powerful and versatile Spigot plugin that allows server
 * Execute shell commands from inside a book by using the shellbook command.
 * Redirect command output to the in-game chat or server console based on your preference.
 * Permission-based access control ensures that only authorized users can execute shell commands.
+* Fully customizable configuration for fine-grained control over plugin settings.
 * Supports various platforms, including Linux, and Windows servers.
 
 ### Commands
