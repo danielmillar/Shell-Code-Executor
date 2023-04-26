@@ -1,0 +1,4 @@
+name: Shell
+version: '${project.version}'
+main: me.danielmillar.shell.Shell
+api-version: 1.19
